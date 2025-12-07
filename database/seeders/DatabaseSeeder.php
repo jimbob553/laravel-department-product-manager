@@ -7,14 +7,17 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
-    {
-        // Create admin user
-        $this->call(CreateAdminSeeder::class);
+{
+    // Create admin
+    $this->call(CreateAdminSeeder::class);
 
-        // Fake Departments
-        \App\Models\Department::factory(5)->create();
+    $admin = \App\Models\User::first();
 
-        // Fake Products
-        \App\Models\Product::factory(20)->create();
-    }
+    \App\Models\Department::factory(5)->create([
+        'user_id' => $admin->id,
+    ]);
+
+    \App\Models\Product::factory(20)->create();
+}
+    
 }
