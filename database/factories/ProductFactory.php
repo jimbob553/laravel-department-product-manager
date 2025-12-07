@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\Department;
 
 // Factory: ProductFactory
 // Purpose: Generates fake data for the Product model for testing and seeding.
@@ -24,7 +25,8 @@ class ProductFactory extends Factory
             'price'       => $this->faker->randomFloat(2, 5, 500), 
             'description' => $this->faker->paragraph(4),
             'item_number' => $sku,
-            'image_url'   => $imageUrl, 
+            'image_url'   => $imageUrl,
+            'department_id' => Department::factory(),  
          ];
     }
 }

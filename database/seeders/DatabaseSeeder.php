@@ -8,8 +8,13 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call([
-            CreateAdminSeeder::class,
-        ]);
+        // Create admin user
+        $this->call(CreateAdminSeeder::class);
+
+        // Fake Departments
+        \App\Models\Department::factory(5)->create();
+
+        // Fake Products
+        \App\Models\Product::factory(20)->create();
     }
 }
