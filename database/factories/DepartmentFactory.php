@@ -18,6 +18,7 @@ class DepartmentFactory extends Factory
 
         return [
             'name' => $this->faker->unique()->randomElement($names),
+            'user_id' => User::factory(),
            
         ];
     }

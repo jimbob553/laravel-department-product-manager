@@ -27,13 +27,7 @@
   {{-- Product List --}}
   @if ($products->count())
     <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      @php
-  dump([
-    'user_role' => auth()->user()->role,
-    'can_update_first_product' => auth()->user()->can('update', $products->first()),
-    'can_delete_first_product' => auth()->user()->can('delete', $products->first()),
-  ]);
-@endphp
+    
       @foreach ($products as $product)
         <li class="border rounded-lg p-4 shadow-sm bg-white">
           <h2 class="font-semibold text-lg mb-2">{{ $product->name }}</h2>
