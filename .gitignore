@@ -37,4 +37,5 @@ Thumbs.db
 
 # SQLite
 *.sqlite
+!database/
 !database/database.sqlite
