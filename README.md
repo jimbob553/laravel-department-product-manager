@@ -4,7 +4,7 @@ Simple Laravel app for managing departments and their products.
 
 Built this to practice CRUD, nested routes, and basic auth/authorization.
 
-## Screenshots
+## Preview
 
 ### Departments
 ![Departments](screenshots/departments.png)
